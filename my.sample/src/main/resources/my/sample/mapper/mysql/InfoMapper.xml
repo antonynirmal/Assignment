@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="my.sample.mapper.mysql.InfoMapper">
+	
+	<resultMap type="Result" id="resultMap">
+		<result column="i1" 			property="int1" />
+		<result column="i2" 			property="int2" />
+		<result column="tot" 			property="tot" />
+	</resultMap>	
+
+	<select id="getList" resultMap="resultMap" parameterType="java.util.Map">
+		SELECT
+			<include refid="selectInfo" />
+		FROM info_table p order by ID
+    </select>
+    
+    <insert id="push" parameterType="Result">
+    	INSERT INTO 
+    		info_table(i1, i2, tot)
+    	 VALUES 
+     		(#{int1}, 
+     		#{int2}, 
+     		#{tot})
+    </insert>
+  
+  	 
+    <sql id="selectInfo">
+    	i1,i2,tot
+    </sql>
+
+</mapper>

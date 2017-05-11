@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+				  xmlns:ms="http://my.sample/web-service-app">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ms:getGcdSum>
+         <ms:name>1</ms:name>
+      <ms:getGcdSum>
+   </soapenv:Body>
+</soapenv:Envelope>

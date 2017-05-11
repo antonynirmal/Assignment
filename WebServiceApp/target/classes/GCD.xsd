@@ -1,0 +1,54 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ms="http://my.sample/web-service-app"
+	targetNamespace="http://my.sample/web-service-app" elementFormDefault="qualified">
+	
+	<xs:element name="getGcd">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	
+	 <xs:element name="getGcdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="headgcd" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+	
+
+	<xs:element name="getGcdList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="getGcdListResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="gcdList" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+	<xs:element name="getGcdSum">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="getGcdSumResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="gcdSum" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+	
+</xs:schema>

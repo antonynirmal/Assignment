@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Packaging Generator" default="buildall" >
+	<target name="buildall" description="unico.ear" depends="cleanall">
+		<jar destfile="unico.ear" manifest="META-INF/MANIFEST.MF">
+			<zipfileset dir="META-INF" prefix="META-INF">
+				<include name="application.xml" />
+				<include name="jboss-app.xml" />
+			</zipfileset>
+			<zipfileset dir="build">
+				<include name="WebServiceApp-0.1.0.jar" />
+				<include name="SampleProject.jar" />
+			</zipfileset>
+		</jar>
+	</target>
+
+	<target name="cleanall" description="Delete the Old Build">
+		<delete file="unico1.ear" />
+		<delete dir="build" />
+		<mkdir dir="build" />
+		
+		<copy file = "../WebServiceApp/target/WebServiceApp-0.1.0.jar" todir="./build">
+		</copy>
+
+		<copy file = "C:/Users/Nirmal/Desktop/Unico/Unico/my.sample/target/SampleProject.jar" todir="./build">
+			
+		</copy>
+	</target>
+</project>

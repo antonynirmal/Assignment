@@ -1,0 +1,50 @@
+server:
+    port: 8080
+---
+spring:
+  profiles:
+    active: dev
+---
+endpoints:
+    enabled: false
+    info:
+        enabled: true
+    health:
+        enabled: true
+        
+    shutdown:
+        enabled: true
+    mappings:
+        enabled: true
+    trace:
+        enabled: true
+    env:
+       enabled:  true
+    autoconfig:
+       enabled: true
+    beans:
+      enabled: true
+    configprops:
+      enabled: true
+    metrics:
+      enabled: true 
+---
+  debug: true
+---
+mysql:
+  driverClassName: com.mysql.jdbc.Driver
+  url: jdbc:mysql://localhost:3306/infodb
+  username: root
+  password: root
+  autoCommit: false
+  initialSize: 5
+  maxActive: 10
+  maxIdle: 5
+  minIdle: 1
+  maxWait: 60000
+  validationQuery: select 1 from dual
+  testOnBorrow: true
+  timeBetweenEvictionRunsMillis: 60000
+  minEvictableIdleTimeMillis: 60000
+  testWhileIdle: true
+---
